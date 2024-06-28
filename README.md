@@ -1,70 +1,36 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Задание:
+Необходимо сделать список товаров и фильтр товаров для магазина игрушечных пони.
+Фильтр открывается в оверлее по клику на ссылку
+Необходимо сделать возможность навесить открытие оверлея на произвольную ссылку на сайте.
+Каталог пони загружен в переменную, которая инициируется при загрузке страницы.
+Формат данных:
+[
+	{
+		name:   ‘Твайлайт’,
+		color:  ‘Фиолетовый’,
+       kind:   ‘Единорог’,
+		price:  19.99,
+		is_new: false,
+		<...>,
+       },
+	<...>
+]
+Изначально в списке выводятся 20 произвольных пони, и есть пагинация
+Доступны следующие фильтры:
+Цвет пони — один вариант из списка
+Вид — Земная пони/Единорог/Пегас/?Аликорн/Кирин/Чейнджлинг/…
+Цена — диапазон от и до
+Новинка — да?/?нет
+По клику на «найти» пони фильтруются
+Выводятся произвольных 20 пони удовлетворяющих выбранным фильтрам.
+Пони можно добавить в корзину и состояние корзины должно сохраняться между пользовательскими сессиями
+При наличии интернета в корзине есть кнопка «Купить» и она должна якобы отправлять запрос на сервер и показывать пользователю уведомление что всё хорошо При отсутствии интернета кнопка «Купить» должна быть заблокирована, у пользователя должна висеть нотификация о том что сети нет.
+Условия: Все недостающие данные можно придумать самому (дизайн в том числе, можно и совсем технический, это неважно);
+Использовать Рeact 16+ вместе с Реакт-Домом, можно затащить Редакс, но помимо этого минимум (лучше ноль) сторонних либ в рантайме, крайне желательно использовать хуки и функциональные компоненты вместе life-cycle и классов;
+Вопросы по заданию приветствуются;
+Не стоит тратить на задание больше 8 часов.
+Результат:
+Репозиторий с исходниками в гитхабе;
+Рабочую версию опубликовать в codesandbox.io;
+Собранная версия, которая будет работать в браузере и в мобильном браузере as well;
+Сопроводительная записка: какие технологии использовались и почему, какие возникли сложности и как они были решены, какие условия пришлось додумать.
