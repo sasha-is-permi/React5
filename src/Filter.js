@@ -58,6 +58,8 @@ const filterCatalog = () => {
         setCatalogFiltred([...calalogNewFilter])
     }
 
+    else setCatalogFiltred([...catalog])
+
 
 
 }
