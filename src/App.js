@@ -46,24 +46,17 @@ function App() {
       <header className="App-header">
         Каталог игрушечных пони
       </header>
-      <div class="Content">
 
-      <div className='Left'>
-       <Basket/>
-       <Pay/>
-      </div>
-  
-     
-      <div className='Center'>
+     <div className='Panel'>
+     <Basket/>
+     <Pay/>
+     </div>
+
        <Filter/>
        <Catalog/>
        <Pagination/>
-      </div>
 
 
-
-
-      </div>
 
 
     </div>
