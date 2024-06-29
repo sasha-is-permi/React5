@@ -1,7 +1,10 @@
 
 import './Catalog.css';
+import { useContext } from 'react';
+import { useStateContext } from "./useStateContext";
 
-import {catalog_list} from "./catalog_list"
+
+
 
 const isNew = (item) => {
     if (item===true) return "Новинка"
@@ -9,9 +12,22 @@ const isNew = (item) => {
 }
 
 
-const ListItems =  catalog_list.map( (element, index) => {
-    return (
-            <li key={index}  className='Li'>
+
+export default function  Catalog() {
+
+    const {
+        catalog,
+          } = useContext(useStateContext);
+
+          console.log("catalog",catalog)
+          
+
+  return (
+       <>
+       <ul className='List'>
+      { catalog && catalog.length>0 && catalog.map( element => {
+        return (
+            <li key={element.id}  className='Li'>
                 <span className='Element'> {element.name} </span>
                 <span className='Element'> {element.color} </span>
                 <span className='Element'> {element.kind} </span>
@@ -21,15 +37,7 @@ const ListItems =  catalog_list.map( (element, index) => {
        
     )
 })
-
-
-export default function  Catalog() {
-
-console.log(catalog_list)
-  return (
-       <>
-       <ul className='List'>
-       { ListItems }
+}
        </ul>
        </>
 
