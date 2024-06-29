@@ -46,7 +46,8 @@ const filterCatalog = () => {
           (filter.color ? (item.color === filter.color) : true ) 
             &&   (filter.kind ? (item.kind === filter.kind) : true ) 
             &&  ( filter.is_new!=="" ? item.is_new.toString() === filter.is_new.toString() : true )
-          
+            &&  ( filter.price_at ? item.price > filter.price_at : true )
+            &&  ( filter.price_to ? item.price < filter.price_to : true )
         )}
         
         )
@@ -99,6 +100,27 @@ const filterCatalog = () => {
         <option value={false}>Нет</option>
       </select>
       
+
+        </div>
+
+        
+        <div className='Element'>
+            <div>
+                Цена от
+            </div>
+        <input 
+        className='FilterInput'
+        value={filter.price_at} onChange={(event) => setFilter({...filter, price_at:event.target.value})}/>
+
+        </div>
+
+        <div className='Element'>
+            <div>
+                Цена до
+            </div>
+        <input 
+        className='FilterInput'
+        value={filter.price_to} onChange={(event) => setFilter({...filter, price_to:event.target.value})}/>
 
         </div>
         

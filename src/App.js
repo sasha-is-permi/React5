@@ -17,7 +17,7 @@ function App() {
 		color: "",
     kind:  "",
 		price_at:0,
-    price_from:0,
+    price_to:0,
 		is_new: "",
   });
 

@@ -6,9 +6,14 @@
 
 .Element{
     text-align: left;
-    flex: 0 1 200px;
+    flex: 0 1 150px;
     }
-    
+
+ .FilterInput{
+    text-align: left;
+    max-width: 100px;
+    }
+
 .Filter {
         display: flex;
         justify-content: center;
