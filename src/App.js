@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Catalog from './Catalog'
+import Filter from './Filter'
 import { useStateContext } from "./useStateContext";
 import {catalog_list} from "./catalog_list"
 
@@ -11,10 +12,19 @@ function App() {
   // Тут вносятся данные, общие для всей программы
 
   const [catalog, setCatalog] = useState([]);
+  const [filter, setFilter] = useState({
+		color: "",
+    kind:  "",
+		price_at:0,
+    price_from:0,
+		is_new: null,
+  });
 
   let context = {
     catalog,
     setCatalog, 
+    filter,
+    setFilter
   };
 
 
@@ -29,6 +39,7 @@ function App() {
       <header className="App-header">
         Каталог игрушечных пони
       </header>
+      <Filter/>
       <Catalog/>
     </div>
     </useStateContext.Provider>

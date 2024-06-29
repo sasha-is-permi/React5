@@ -19,7 +19,6 @@ export default function  Catalog() {
         catalog,
           } = useContext(useStateContext);
 
-          console.log("catalog",catalog)
           
 
   return (
