@@ -12,6 +12,7 @@ function App() {
   // Тут вносятся данные, общие для всей программы
 
   const [catalog, setCatalog] = useState([]);
+  const [catalogFiltred, setCatalogFiltred] = useState([]);
   const [filter, setFilter] = useState({
 		color: "",
     kind:  "",
@@ -23,6 +24,8 @@ function App() {
   let context = {
     catalog,
     setCatalog, 
+    catalogFiltred,
+    setCatalogFiltred, 
     filter,
     setFilter
   };
@@ -31,6 +34,7 @@ function App() {
 // Установка значений каталога
   useEffect(()=>{
     setCatalog([...catalog_list])
+    setCatalogFiltred([...catalog_list])
   },[])
 
   return (

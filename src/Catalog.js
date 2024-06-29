@@ -16,7 +16,7 @@ const isNew = (item) => {
 export default function  Catalog() {
 
     const {
-        catalog,
+        catalogFiltred,
           } = useContext(useStateContext);
 
           
@@ -24,7 +24,7 @@ export default function  Catalog() {
   return (
        <>
        <ul className='List'>
-      { catalog && catalog.length>0 && catalog.map( element => {
+      { catalogFiltred && catalogFiltred.length>0 && catalogFiltred.map( element => {
         return (
             <li key={element.id}  className='Li'>
                 <span className='Element'> {element.name} </span>

@@ -8,7 +8,9 @@ export default function  Filter() {
 
     const {
         filter,
-        catalog
+        setFilter,
+        catalog,
+        setCatalogFiltred,
           } = useContext(useStateContext);
 
  const [colors, setColors] = useState([])
@@ -29,13 +31,44 @@ export default function  Filter() {
     }
 
  },[catalog])
-          
+         
+ /*
+ useEffect(()=>{
+console.log(filter)
+ },[filter])
+*/
+
+const filterCatalog = () => {
+    if (filter.color) {
+        let calalogNewFilter = catalog.filter(item => item.color === filter.color)
+        setCatalogFiltred([...calalogNewFilter])
+    }
+}
 
   return (
     <>
     <h2 className='FilterHeader'>
     Фильтры 
     </h2>
+    <div className='Filter'>
+        <div className='Element'>
+            <div>
+                Цвет
+            </div>
+            <div>
+            <select value={filter.color} onChange={(event) => setFilter({...filter, color:event.target.value})}>
+           {colors && colors.length>0 && colors.map((text, index) => {
+		return <option key={index}>{text}</option>;
+	}) }
+		</select>
+            </div>
+
+        </div>
+        
+        <button onClick={filterCatalog}>
+        Найти
+    </button>
+    </div>
 
     </>
   )
