@@ -1,7 +1,6 @@
 
 import './App.css';
-
-
+import Catalog from './Catalog'
 
 function App() {
   return (
@@ -9,6 +8,7 @@ function App() {
       <header className="App-header">
         Каталог игрушечных пони
       </header>
+      <Catalog/>
     </div>
   );
 }
