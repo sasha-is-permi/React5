@@ -24,13 +24,17 @@ function App() {
 		is_new: "",
   });
 
+  const [basket, setBasket] = useState([]);
+
   let context = {
     catalog,
     setCatalog, 
     catalogFiltred,
     setCatalogFiltred, 
     filter,
-    setFilter
+    setFilter,
+    basket,
+    setBasket
   };
 
 
@@ -47,10 +51,8 @@ function App() {
         Каталог игрушечных пони
       </header>
 
-     <div className='Panel'>
      <Basket/>
      <Pay/>
-     </div>
 
        <Filter/>
        <Catalog/>

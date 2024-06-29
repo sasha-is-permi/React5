@@ -1,4 +1,22 @@
 .basket{
     font-size: 20px;
     margin-right: 50px;
+    text-align: center;
 }
+
+.ElementButton{
+    padding: 5px;
+    margin: 2px;
+    }
+
+.Li {
+    display: flex;
+    justify-content: center;
+}
+
+.List {
+    display: block;
+    list-style: none;
+    margin-top: 20px;
+    font-size: 20px;
+    }

@@ -17,9 +17,14 @@ export default function  Catalog() {
 
     const {
         catalogFiltred,
+        basket,
+        setBasket
           } = useContext(useStateContext);
 
-          
+  const addToBasket = (element) =>{
+     setBasket([...basket,element])
+     console.log(basket)
+  }        
 
   return (
        <>
@@ -32,7 +37,7 @@ export default function  Catalog() {
                 <span className='Element'> {element.kind} </span>
                 <span className='Element'> {element.price} р. </span>
                 <span className='Element'> { isNew (element.is_new ) } </span>
-                <button  className='ElementButton'> В корзину </button>
+                <button  className='ElementButton' onClick={()=>{addToBasket(element)}}> В корзину </button>
             </li>
        
     )
