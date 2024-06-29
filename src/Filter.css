@@ -13,3 +13,8 @@
         display: flex;
         justify-content: center;
     }
+
+.FilterButton {
+    margin-top: 16px;
+    padding: 5px;
+}

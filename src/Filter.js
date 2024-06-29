@@ -40,26 +40,17 @@ console.log(filter)
 
 const filterCatalog = () => {
 
-
-
-    if (filter.color && !filter.kind)  {
-        let calalogNewFilter = catalog.filter(item => item.color === filter.color)
+    let calalogNewFilter = catalog.filter(item => {
+        console.log(filter.is_new)
+        return (
+          (filter.color ? (item.color === filter.color) : true ) 
+            &&   (filter.kind ? (item.kind === filter.kind) : true ) 
+            &&  ( filter.is_new!=="" ? item.is_new.toString() === filter.is_new.toString() : true )
+          
+        )}
+        
+        )
         setCatalogFiltred([...calalogNewFilter])
-    }
-
-    else if (!filter.color && filter.kind) {
-        let calalogNewFilter = catalog.filter(item => item.kind === filter.kind)
-        setCatalogFiltred([...calalogNewFilter])
-    }
-
-    
-    else if (filter.color && filter.kind) {
-        let calalogNewFilter = catalog.filter(item => {return ((item.color === filter.color) && (item.kind === filter.kind))})
-        setCatalogFiltred([...calalogNewFilter])
-    }
-
-    else setCatalogFiltred([...catalog])
-
 
 
 }
@@ -97,8 +88,21 @@ const filterCatalog = () => {
             </div>
 
         </div>
+
+        <div className='Element'>
+            <div>
+                Новинка
+            </div>
+        <select value={filter.is_new} onChange={(event) => setFilter({...filter, is_new:event.target.value})}>
+        <option value=""></option>
+        <option value={true}>Да</option>
+        <option value={false}>Нет</option>
+      </select>
+      
+
+        </div>
         
-        <button onClick={filterCatalog}>
+        <button onClick={filterCatalog} className='FilterButton'>
         Найти
     </button>
     </div>

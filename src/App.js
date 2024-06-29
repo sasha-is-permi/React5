@@ -18,7 +18,7 @@ function App() {
     kind:  "",
 		price_at:0,
     price_from:0,
-		is_new: null,
+		is_new: "",
   });
 
   let context = {
