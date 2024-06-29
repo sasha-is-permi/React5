@@ -13,17 +13,17 @@ const isNew = (item) => {
 
 
 
-export default function  Catalog() {
+export default function  CatalogList() {
 
     const {
         catalogFiltred,
-        basket,
         setBasket
           } = useContext(useStateContext);
 
   const addToBasket = (element) =>{
-     setBasket([...basket,element])
-     console.log(basket)
+     setBasket(basket => [...basket,{id:basket.length, id_catalog:element.id, name:element.name, color: element.color,
+         kind: element.kind, price: element.price, is_new: element.is_new
+     }])
   }        
 
   return (

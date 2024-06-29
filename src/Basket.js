@@ -10,11 +10,16 @@ export default function  Basket() {
         setBasket
           } = useContext(useStateContext);
 
-          const addToBasket = (element) =>{
-            setBasket([...basket,element])
-            console.log(basket)
-         }      
-         
+          const deleteFromBasket = (id) =>{
+            let index = basket.findIndex(element=> element.id === id)   
+                setBasket(a=>[
+                    ...a.slice(0,index),
+                    ...a.slice(index+1,a.length)
+                  ])
+
+        
+         }    
+        
          
 const isNew = (item) => {
     if (item===true) return "Новинка"
@@ -39,6 +44,7 @@ const isNew = (item) => {
          <span className='Element'> {element.kind} </span>
          <span className='Element'> {element.price} р. </span>
          <span className='Element'> { isNew (element.is_new ) } </span>
+         <button  className='ElementButton' onClick={()=>{deleteFromBasket(element.id)}}> Удалить </button>
      </li>
 
 )

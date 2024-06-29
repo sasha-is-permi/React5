@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import './App.css';
-import Catalog from './Catalog'
+import CatalogList from './CatalogList';
 import Filter from './Filter'
 import Pagination from './Pagination'
 import Basket from './Basket'
@@ -55,7 +55,7 @@ function App() {
      <Pay/>
 
        <Filter/>
-       <Catalog/>
+       <CatalogList/>
        <Pagination/>
 
 
