@@ -4,6 +4,8 @@ import './App.css';
 import Catalog from './Catalog'
 import Filter from './Filter'
 import Pagination from './Pagination'
+import Basket from './Basket'
+import Pay from './Pay'
 import { useStateContext } from "./useStateContext";
 import {catalog_list} from "./catalog_list"
 
@@ -44,9 +46,26 @@ function App() {
       <header className="App-header">
         Каталог игрушечных пони
       </header>
-      <Filter/>
-      <Catalog/>
-      <Pagination/>
+      <div class="Content">
+
+      <div className='Left'>
+       <Basket/>
+       <Pay/>
+      </div>
+  
+     
+      <div className='Center'>
+       <Filter/>
+       <Catalog/>
+       <Pagination/>
+      </div>
+
+
+
+
+      </div>
+
+
     </div>
     </useStateContext.Provider>
   );
