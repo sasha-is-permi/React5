@@ -1,0 +1,15 @@
+.paginationNumber{
+  border: 1px solid;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.paginationBlock {
+    display:flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.paginationLeft{
+    margin-right:5px ;
+}

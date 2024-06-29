@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Catalog from './Catalog'
 import Filter from './Filter'
+import Pagination from './Pagination'
 import { useStateContext } from "./useStateContext";
 import {catalog_list} from "./catalog_list"
 
@@ -34,7 +35,7 @@ function App() {
 // Установка значений каталога
   useEffect(()=>{
     setCatalog([...catalog_list])
-    setCatalogFiltred([...catalog_list])
+    setCatalogFiltred([...catalog_list.filter((item,index) => index<20)])
   },[])
 
   return (
@@ -45,6 +46,7 @@ function App() {
       </header>
       <Filter/>
       <Catalog/>
+      <Pagination/>
     </div>
     </useStateContext.Provider>
   );

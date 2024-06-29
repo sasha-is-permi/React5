@@ -32,6 +32,7 @@ export default function  Catalog() {
                 <span className='Element'> {element.kind} </span>
                 <span className='Element'> {element.price} р. </span>
                 <span className='Element'> { isNew (element.is_new ) } </span>
+                <button  className='ElementButton'> В корзину </button>
             </li>
        
     )

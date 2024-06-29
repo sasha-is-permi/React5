@@ -3,7 +3,13 @@
 .Element{
 text-align: left;
 flex: 0 1 200px;
+
 }
+
+.ElementButton{
+    padding: 5px;
+    margin: 2px;
+    }
 
 .Li {
     display: flex;
