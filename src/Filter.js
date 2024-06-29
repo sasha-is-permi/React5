@@ -26,23 +26,40 @@ export default function  Filter() {
     if (catalog && catalog.length > 0) {
         let colors = unique(catalog.map(item => item.color))
         let kinds = unique(catalog.map(item => item.kind))
-        setColors(colors)
-        setKinds(kinds)
+        setColors(["",...colors])
+        setKinds(["",...kinds])
     }
 
  },[catalog])
          
- /*
+ 
  useEffect(()=>{
 console.log(filter)
  },[filter])
-*/
+
 
 const filterCatalog = () => {
-    if (filter.color) {
+
+
+
+    if (filter.color && !filter.kind)  {
         let calalogNewFilter = catalog.filter(item => item.color === filter.color)
         setCatalogFiltred([...calalogNewFilter])
     }
+
+    else if (!filter.color && filter.kind) {
+        let calalogNewFilter = catalog.filter(item => item.kind === filter.kind)
+        setCatalogFiltred([...calalogNewFilter])
+    }
+
+    
+    else if (filter.color && filter.kind) {
+        let calalogNewFilter = catalog.filter(item => {return ((item.color === filter.color) && (item.kind === filter.kind))})
+        setCatalogFiltred([...calalogNewFilter])
+    }
+
+
+
 }
 
   return (
@@ -58,6 +75,20 @@ const filterCatalog = () => {
             <div>
             <select value={filter.color} onChange={(event) => setFilter({...filter, color:event.target.value})}>
            {colors && colors.length>0 && colors.map((text, index) => {
+		return <option key={index}>{text}</option>;
+	}) }
+		</select>
+            </div>
+
+        </div>
+
+        <div className='Element'>
+            <div>
+                Вид
+            </div>
+            <div>
+            <select value={filter.kind} onChange={(event) => setFilter({...filter, kind:event.target.value})}>
+           {kinds && kinds.length>0 && kinds.map((text, index) => {
 		return <option key={index}>{text}</option>;
 	}) }
 		</select>
