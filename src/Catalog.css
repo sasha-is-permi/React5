@@ -1,7 +1,19 @@
 
 
 .Element{
-margin-right: 10px;
+text-align: left;
+flex: 0 1 200px;
 }
 
+.Li {
+    display: flex;
+    justify-content: center;
+}
+
+.List {
+    display: block;
+    list-style: none;
+    margin-top: 50px;
+    font-size: 20px;
+    }
 

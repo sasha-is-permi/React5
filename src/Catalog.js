@@ -11,10 +11,11 @@ const isNew = (item) => {
 
 const ListItems =  catalog_list.map( (element, index) => {
     return (
-            <li key={index}>
+            <li key={index}  className='Li'>
                 <span className='Element'> {element.name} </span>
                 <span className='Element'> {element.color} </span>
-                <span className='Element'> {element.price} </span>
+                <span className='Element'> {element.kind} </span>
+                <span className='Element'> {element.price} р. </span>
                 <span className='Element'> { isNew (element.is_new ) } </span>
             </li>
        
@@ -27,11 +28,9 @@ export default function  Catalog() {
 console.log(catalog_list)
   return (
        <>
-       <ul>
-        <li></li>
+       <ul className='List'>
        { ListItems }
        </ul>
-
        </>
 
   );
