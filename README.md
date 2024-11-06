@@ -1,5 +1,5 @@
 Использованно: 
-react: 18.3.1, react-dom: 18.3.1, react context
+react, react-dom, react context
 Додумывал и сложности: 
 
 Как сделать чтобы не учитывать значение в фильтре?
